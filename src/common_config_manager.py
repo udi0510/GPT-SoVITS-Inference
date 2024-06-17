@@ -9,7 +9,7 @@ from Synthesizers.base import load_config
 
 class Api_Config(BaseModel):   
     config_path:str = None
-    tts_port: int = 5000
+    tts_port: int = 6006
     tts_host: str = "0.0.0.0" 
     synthesizer: str = "gsv_fast"
 
