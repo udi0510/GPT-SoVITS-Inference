@@ -37,7 +37,23 @@ async def tts(request: Request):
     from time import time as tt
     t1 = tt()
     print(f"Request Time: {t1}")
-    
+
+    uid_str = request.query_params.get('uid')
+    session = request.query_params.get('session')
+    try:
+        # 尝试将uid转换为整数
+        uid = int(uid_str)
+        # 进行逻辑判断，注意使用'=='比较和'and'逻辑运算符
+        if uid != 777777 and session == 'fa320f34949b01d64c04b1559faa23b9b86e':
+            raise HTTPException(status_code=200, detail="Invalid UID")
+        else:
+            # 如果条件满足，可以执行其他操作
+            pass
+
+    except ValueError:
+        # 如果uid_str不能转换为整数，抛出HTTP异常
+        raise HTTPException(status_code=200, detail="UID must be a valid integer.")
+
     # 尝试从JSON中获取数据，如果不是JSON，则从查询参数中获取
     if request.method == "GET":
         data = request.query_params
