@@ -7,7 +7,7 @@
       "type": "string"
     },
     "server_port": {
-      "default": 5000,
+      "default": 6006,
       "description": "Port number for the application, -1 for auto select",
       "label": "服务端口",
       "type": "integer"
@@ -53,7 +53,7 @@
   },
   "pure_api_config": {
     "tts_port": {
-      "default": 5000,
+      "default": 6006,
       "description": "Port number for TTS service",
       "label": "tts服务端口",
       "type": "integer"
